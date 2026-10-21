@@ -5,7 +5,7 @@ import time
 from groq import Groq
 
 # Model names change often: check console.groq.com and set GROQ_MODEL in .env
-MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
+MODEL = os.getenv("GROQ_MODEL", "openai/gpt-oss-120b")
 
 
 def ask_json(system: str, user: str) -> dict:
