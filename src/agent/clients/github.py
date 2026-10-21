@@ -7,7 +7,7 @@ API = "https://api.github.com"
 
 class GitHubClient:
     def __init__(self, repo: str | None = None, token: str | None = None):
-        self.repo = repo or os.environ.get("GITHUB_REPO", "")
+        self.repo = repo or os.environ.get("GITHUB_REPO") or os.environ.get("GITHUB_REPOSITORY", "")
         token = token or os.environ.get("GITHUB_TOKEN", "")
         if not token or "/" not in self.repo:
             raise RuntimeError("Set GITHUB_TOKEN and GITHUB_REPO (owner/repo) in .env")
